@@ -1,0 +1,16 @@
+{
+  "name": "@magne-mite/types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsxema/magne-mite-types.git"
+  },
+  "author": "RobertG",
+  "license": "ISC",
+  "homepage": "https://github.com/Microsxema/magne-mite-types#readme"
+}
