@@ -15,6 +15,24 @@ export type Log = {
   logIndex: number;
 }
 
+export interface EventData {
+  returnValues: {
+    [key: string]: any;
+  };
+  raw: {
+    data: string;
+    topics: string[];
+  };
+  event: string;
+  signature: string;
+  logIndex: number;
+  transactionIndex: number;
+  transactionHash: string;
+  blockHash: string;
+  blockNumber: number;
+  address: string;
+}
+
 export type BlocksRange = {
   from: number, to: 'latest' | number,
 }
