@@ -1,6 +1,8 @@
-import {ISubscribeAsyncChannel} from "../common/common.interfaces";
 
-export interface IHashRepository extends ISubscribeAsyncChannel {
+export interface IHashRepository {
+  on(type: 'close', callback: () => void): void;
+  on(type: 'error', callback: (error) => void): void;
+
   isExists(key: string): Promise<boolean>;
 
   get(key: string): Promise<[[field: string, value: string]]>;
@@ -16,7 +18,10 @@ export interface IHashRepository extends ISubscribeAsyncChannel {
  *    key2 - [value1, value2, value3];
  *    key3 - [];
  */
-export interface IKeyListRepository<TPayload> extends ISubscribeAsyncChannel {
+export interface IKeyListRepository<TPayload> {
+  on(type: 'close', callback: () => void): void;
+  on(type: 'error', callback: (error) => void): void;
+
   /**
    * List methods.
    */
@@ -53,6 +58,9 @@ export interface IKeyListRepository<TPayload> extends ISubscribeAsyncChannel {
  * Same with keys.
  */
 export interface IWeightedKeysListsRepository<TPayload> extends IKeyListRepository<TPayload> {
+  on(type: 'close', callback: () => void): void;
+  on(type: 'error', callback: (error) => void): void;
+
   removeListsByScore(min: number, max: number): Promise<void>;
   removeListsByPosition(start: number, stop: number): Promise<void>;
 

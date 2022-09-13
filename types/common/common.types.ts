@@ -14,3 +14,11 @@ export type Log = {
   transactionHash: string;
   logIndex: number;
 }
+
+export type BlocksRange = {
+  from: number, to: 'latest' | number,
+}
+
+export type BlocksRangeOnlyNumber = {
+  from: number, to: number,
+}
