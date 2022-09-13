@@ -5,15 +5,10 @@ import {NotificationResponse, TaskGetLogsResponse, TaskRequest} from "./blockcha
 /** -------------------------------------- Server Area -------------------------------------- */
 
 export interface IRouterLogsFetcherServer {
-  on(type: 'close', callback: () => void): void;
-  on(type: 'error', callback: (error) => void): void;
-
   notifyEveryoneAboutNewLogs(logs: Log[]): Promise<void>;
 }
 
 export interface IRouterTaskExecutorServer {
-  on(type: 'close', callback: () => void): void;
-  on(type: 'error', callback: (error) => void): void;
   on(type: 'task-request', callback: (taskRequest: TaskRequest) => void): void;
 
   sendClientExecutedTaskGetLogs(clientName: string, task: TaskGetLogsResponse): Promise<void>;
@@ -24,8 +19,6 @@ export interface IRouterTaskExecutorServer {
 export interface IRouterClient {
   readonly clientName: string;
 
-  on(type: 'close', callback: () => void): void;
-  on(type: 'error', callback: (error) => void): void;
   on(type: 'task-response', callback: (taskResponse: TaskGetLogsResponse) => void): void;
   on(type: 'subscription-response', callback: (notification: NotificationResponse) => void): void;
 

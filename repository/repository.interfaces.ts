@@ -1,8 +1,5 @@
 
 export interface IHashRepository {
-  on(type: 'close', callback: () => void): void;
-  on(type: 'error', callback: (error) => void): void;
-
   isExists(key: string): Promise<boolean>;
 
   get(key: string): Promise<[[field: string, value: string]]>;
@@ -19,9 +16,6 @@ export interface IHashRepository {
  *    key3 - [];
  */
 export interface IKeyListRepository<TPayload> {
-  on(type: 'close', callback: () => void): void;
-  on(type: 'error', callback: (error) => void): void;
-
   /**
    * List methods.
    */
@@ -58,9 +52,6 @@ export interface IKeyListRepository<TPayload> {
  * Same with keys.
  */
 export interface IWeightedKeysListsRepository<TPayload> extends IKeyListRepository<TPayload> {
-  on(type: 'close', callback: () => void): void;
-  on(type: 'error', callback: (error) => void): void;
-
   removeListsByScore(min: number, max: number): Promise<void>;
   removeListsByPosition(start: number, stop: number): Promise<void>;
 

@@ -8,8 +8,6 @@ export interface IContractProvider {
 }
 
 export interface IContractListenerProvider extends IContractProvider {
-  on(type: 'close', callback: () => void);
-  on(type: 'error', callback: (error) => void);
   on(type: 'events', callback: (eventData) => void);
 
   startListener(fromBlockNumber?: number): void;
