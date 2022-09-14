@@ -4,3 +4,7 @@ export type GetPastLogsPayload = {
   toBlockNumber: number,
   fromBlockNumber: number | 'latest',
 }
+
+export type BlockchainRepositoryOptions = {
+  getLogs: { stepRange: number },
+}
