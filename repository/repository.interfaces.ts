@@ -1,8 +1,9 @@
 import {Log} from "../common/common.types";
+import {GetPastLogsPayload} from "./repository.types";
 
 export interface IBlockchainRepository {
   getBlockNumber(): Promise<number>;
-  getPastLogs(payload: { addresses?: string[], fromBlockNumber: number, toBlockNumber: number }): Promise<Log[]>;
+  getPastLogs(payload: GetPastLogsPayload): Promise<Log[]>;
 }
 
 export interface IHashRepository {
