@@ -1,8 +1,8 @@
 
 export type GetPastLogsPayload = {
   addresses?: string[],
-  toBlockNumber: number,
-  fromBlockNumber: number | 'latest',
+  fromBlockNumber: number,
+  toBlockNumber: number | 'latest',
 }
 
 export type BlockchainRepositoryOptions = {
