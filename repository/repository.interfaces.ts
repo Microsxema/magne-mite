@@ -1,3 +1,9 @@
+import {Log} from "../common/common.types";
+
+export interface IBlockchainRepository {
+  getBlockNumber(): Promise<number>;
+  getPastLogs(payload: { addresses?: string[], fromBlockNumber: number, toBlockNumber: number }): Promise<Log[]>;
+}
 
 export interface IHashRepository {
   isExists(key: string): Promise<boolean>;
